@@ -77,17 +77,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 56px;
 }
 
-.section-label {
-  display: inline-block;
-  font-family: var(--font-en);
-  font-size: .68rem;
-  font-weight: 600;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--c-accent);
-  margin-bottom: 8px;
-}
-
 .section-title {
   font-family: var(--font-en);
   font-size: clamp(1.25rem, 2.4vw, 1.75rem);
@@ -338,7 +327,7 @@ body.menu-open { overflow: hidden; }
   background: var(--c-dark);
 }
 @media (max-width: 768px) {
-  .kv { min-height: 100vh; }
+  .kv { height: 88vh; min-height: 520px; }
 }
 
 .kv__slider,
@@ -439,6 +428,9 @@ body.menu-open { overflow: hidden; }
   margin-bottom: 20px;
   opacity: 0;
   animation: kvUp .8s var(--ease) forwards .3s;
+}
+.kv__label-saas {
+  text-transform: none;
 }
 
 .kv__title {
@@ -1198,7 +1190,22 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reason-track { transition: none !important; }
+  html { scroll-behavior: auto; }
+  .reason-track,
+  .kv__slider,
+  .kv__point,
+  .observe-fade,
+  .plan-card,
+  .service-item,
+  .problem-item,
+  .problem-card,
+  .problem-center { transition: none !important; }
+  .kv__slider,
+  .kv__point,
+  .problem-center,
+  .problem-card,
+  .reason-track,
+  .voice-section__bg { will-change: auto !important; }
 }
 
 /* Comparison box（4枚目スライド内）— ガラスカード・視認性重視 */
@@ -1743,9 +1750,7 @@ body.menu-open { overflow: hidden; }
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 20px;
   }
-  .flow-visual-arrow {
-    display: none;
-  }
+  /* 中間幅では矢印をアイコン右側に表示（ベースの right: -16px を継承） */
 }
 
 @media (max-width: 640px) {
@@ -2474,18 +2479,6 @@ body.menu-open { overflow: hidden; }
   color: var(--c-white);
 }
 
-.float-cta__btn--mypage {
-  position: relative;
-  background: var(--c-accent);
-  color: var(--c-white);
-  box-shadow: 0 4px 20px rgba(245,158,11,.28);
-}
-.float-cta__btn--mypage:hover {
-  background: #d97706;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(245,158,11,.42);
-}
-
 .float-cta__btn::before {
   content: "";
   position: absolute;
@@ -2497,8 +2490,6 @@ body.menu-open { overflow: hidden; }
   border-radius: 0 2px 2px 0;
 }
 .float-cta__btn--login:hover::before { opacity: 1; }
-.float-cta__btn--mypage::before { background: rgba(255,255,255,.5); }
-.float-cta__btn--mypage:hover::before { opacity: 1; }
 
 /* ========================================
    Scroll Fade (JS driven)
@@ -2560,7 +2551,8 @@ body.menu-open { overflow: hidden; }
   .section { padding: 64px 0; }
   .section-header { margin-bottom: 44px; }
 
-  /* KV */
+  /* KV – スマホではヒーロー縦幅を抑える */
+  .kv { height: 88vh; min-height: 520px; }
   .kv__inner {
     left: 20px;
     right: 56px;
@@ -2650,27 +2642,15 @@ body.menu-open { overflow: hidden; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .service-item--wide { grid-column: 1 / -1; }
 
-  /* Flow */
+  /* Flow – スマホでは矢印非表示 */
   .flow-visual {
     grid-template-columns: 1fr;
     max-width: 320px;
     gap: 40px;
   }
-  .flow-visual-item {
-    width: 100%;
-  }
-  .flow-visual-arrow {
-    display: block;
-    right: auto;
-    bottom: -30px;
-    top: auto;
-    left: 50%;
-    transform: translateX(-50%) rotate(90deg);
-  }
-  .flow-visual-arrow svg {
-    width: 20px;
-    height: 20px;
-  }
+  .flow-visual-item { width: 100%; }
+  .flow-visual-arrow { display: none; }
+  .flow-visual-arrow svg { width: 20px; height: 20px; }
 
   /* Plan */
   .plan-lite { padding: 32px 24px; gap: 28px; }
@@ -2702,7 +2682,8 @@ body.menu-open { overflow: hidden; }
   .logo { letter-spacing: .1em; font-size: 1.15rem; }
   .footer-brand .logo { letter-spacing: .08em; font-size: 1rem; }
 
-  /* KV */
+  /* KV – 小さいスマホではさらに縦幅を抑える */
+  .kv { height: 85vh; min-height: 460px; }
   .kv__inner { left: 16px; right: 48px; bottom: 56px; }
   .kv__title-line { font-size: clamp(1.4rem, 8vw, 2rem); }
   .kv__btn { padding: 12px 28px; font-size: .88rem; }
