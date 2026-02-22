@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSSCAN | 顧客ヘルス・マネジメントSaaS</title>
+    <meta name="description" content="LOSSCANは、すでに一定数の来店実績がある店舗を対象に、来店周期・継続傾向をAIで学習し、「来なくなりそうな顧客」だけを自動で抽出・可視化する顧客ヘルス・マネジメントSaaSです。">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="siteHeader">
+        <div class="container header-inner">
+            <a href="#" class="logo">LOSSCAN</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#problem">PROBLEM</a></li>
+                    <li class="nav-item"><a href="#reason">REASON</a></li>
+                    <li class="nav-item"><a href="#service">SERVICE</a></li>
+                    <li class="nav-item"><a href="#plan">PLAN</a></li>
+                    <li class="nav-item"><a href="#contact" class="btn btn-sm">Contact</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="menu-toggle" aria-label="メニューを開く">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav">
+        <nav class="mobile-nav-inner">
+            <a href="#problem">PROBLEM</a>
+            <a href="#reason">REASON</a>
+            <a href="#service">SERVICE</a>
+            <a href="#plan">PLAN</a>
+            <a href="#contact" class="mobile-nav__contact">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+
+        <!-- ========================================
+             KV / Hero Section
+             ======================================== -->
+        <section class="kv">
+            <!-- Slider backgrounds (parallax applied via JS) -->
+            <div class="kv__slider swiper" id="kvSlider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide kv__slide kv__slide--1"
+                         style="background-image:url('images/kv-slide-1.png')"></div>
+                    <div class="swiper-slide kv__slide kv__slide--2"
+                         style="background-image:url('images/kv-slide-2.png')"></div>
+                    <div class="swiper-slide kv__slide kv__slide--3"
+                         style="background-image:url('images/kv-slide-3.png')"></div>
+                </div>
+            </div>
+            <!-- スライド切り替え時の「残像」レイヤー -->
+            <div class="kv__slide-ghost" id="kvSlideGhost" aria-hidden="true">
+                <span class="kv__slide-ghost-overlay"></span>
+            </div>
+
+            <!-- Text content -->
+            <div class="kv__inner">
+                <p class="kv__label">Customer Management</p>
+                <h1 class="kv__title">
+                    <span class="kv__title-line">来なくなりそうな顧客を、</span>
+                    <span class="kv__title-line">来なくなる前に。</span>
+                </h1>
+                <div class="kv__lead">
+                    <p>LOSSCANは、新規集客を増やすツールではありません。</p>
+                    <p>すでに来ている顧客を、静かに失わないための仕組みです。</p>
+                </div>
+                <ul class="kv__points">
+                    <li class="kv__point" id="kvPoint">来店遅延の兆候を自動で検知</li>
+                </ul>
+                <div class="kv__actions">
+                    <a href="#contact" class="kv__btn">Contact</a>
+                </div>
+            </div>
+
+            <!-- Vertical pagination -->
+            <div class="kv__pagination swiper-pagination"></div>
+
+            <!-- Scroll indicator -->
+            <div class="kv__scroll">
+                <span class="kv__scroll-label">SCROLL</span>
+                <div class="kv__scroll-line"></div>
+            </div>
+
+            <!-- Custom cursor (desktop only) -->
+            <div class="kv__cursor" id="kvCursor" aria-hidden="true">
+                <svg class="kv__cursor-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <line x1="2" y1="10" x2="16" y2="10"></line>
+                    <polyline points="10 4 16 10 10 16"></polyline>
+                </svg>
+                <span class="kv__cursor-label">NEXT</span>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PROBLEM（共感）
+             ======================================== -->
+        <section id="problem" class="problem-section">
+
+            <!-- ピン止め区間：カードが収縮するまでスクロールで固定 -->
+            <div class="problem-pin-wrap">
+                <div class="problem-pinned">
+                    <div class="problem-pinned-inner">
+
+                        <div class="section-header">
+                            <h2 class="section-title">Problem</h2>
+                        </div>
+
+                        <div class="problem-arena">
+
+                            <!-- 左上 -->
+                            <div class="problem-card problem-card--tl">
+                                <p class="problem-card__text">気づいたら、来なくなっていたお客様がいる</p>
+                            </div>
+
+                            <!-- 中央写真 -->
+                            <div class="problem-center">
+                                <img src="images/problem-center.png" alt="悩む店舗オーナー" width="320" height="280" loading="lazy">
+                            </div>
+
+                            <!-- 右上 -->
+                            <div class="problem-card problem-card--tr">
+                                <p class="problem-card__text">誰に声をかけるべきか、スタッフごとに判断が違う</p>
+                            </div>
+
+                            <!-- 左下 -->
+                            <div class="problem-card problem-card--bl">
+                                <p class="problem-card__text">忙しくて、全顧客を見きれない</p>
+                            </div>
+
+                            <!-- 右下 -->
+                            <div class="problem-card problem-card--br">
+                                <p class="problem-card__text">失ってから「もったいなかった」と感じることが多い</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ピン解除後のストーリーテキスト -->
+            <div class="problem-story-wrap">
+                <div class="container">
+                    <div class="problem-story observe-fade">
+                        <p class="problem-story__label">Problem の本質</p>
+                        <div class="problem-story__block">
+                            <p class="problem-story__p">多くの店舗で起きているのは、<br><strong>「フォローしなかった」</strong>のではなく、<strong>「気づけなかった」</strong>という問題です。</p>
+                            <p class="problem-story__p">予約システムは、<br>"来る予定の人"は教えてくれても、<br><strong>"来なくなり始めた人"</strong>までは教えてくれません。</p>
+                            <p class="problem-story__p">だからこそ、<strong>失ってから動く</strong>のではなく、<br><strong>"遅れ始めた段階で気づける状態"</strong>を先に作ることが、<br>継続率改善の近道になります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================
+             REASON（選ばれる理由）– ピン止め横スライド
+             ======================================== -->
+        <section id="reason" class="section reason-section">
+            <div class="reason-pin-wrap" data-slides="4">
+                <div class="reason-pinned" id="reasonPinned">
+                    <div class="reason-pinned__header">
+                        <h2 class="reason-pinned__title">Reason</h2>
+                    </div>
+                    <div class="reason-pinned__body">
+                        <div class="reason-track">
+                            <div class="reason-slide">
+                                <div class="reason-slide-img"><img src="images/reason-1.png" alt="平均ではなく、「その人のリズム」を見る" width="900" height="600" loading="lazy"></div>
+                                <div class="reason-slide-num">01</div>
+                                <h3 class="reason-slide-title">平均ではなく、<br>「その人のリズム」を見る</h3>
+                                <p class="reason-slide-desc">LOSSCANは、全体平均や一律ルールでは判断しません。過去の来店履歴から、その顧客ごとの通常周期を算出し、ズレ始めたタイミングを検知します。</p>
+                            </div>
+                            <div class="reason-slide">
+                                <div class="reason-slide-img"><img src="images/reason-2.png" alt="判断ではなく、「行動」を助ける設計" width="900" height="600" loading="lazy"></div>
+                                <div class="reason-slide-num">02</div>
+                                <h3 class="reason-slide-title">判断ではなく、<br>「行動」を助ける設計</h3>
+                                <p class="reason-slide-desc">分析結果を読み解く必要はありません。RED／YELLOWを見るだけで、今、誰に声をかけるべきかが分かります。</p>
+                            </div>
+                            <div class="reason-slide">
+                                <div class="reason-slide-img"><img src="images/reason-3.png" alt="「増やす」より、「失わない」に集中" width="900" height="600" loading="lazy"></div>
+                                <div class="reason-slide-num">03</div>
+                                <h3 class="reason-slide-title">「増やす」より、<br>「失わない」に集中</h3>
+                                <p class="reason-slide-desc">LOSSCANは、新規集客機能をあえて持ちません。既存顧客の継続に特化することで、現場で本当に使われる仕組みに絞っています。</p>
+                            </div>
+                            <!-- 4枚目: 比較スライド（見出しなし） -->
+                            <div class="reason-slide reason-slide--comparison">
+                                <div class="reason-comparison">
+                                    <h3>予約システム／無料AIとの違い</h3>
+                                    <dl class="comparison-list">
+                                        <div>
+                                            <dt>予約システム</dt>
+                                            <dd>来店予定は分かっても、「来なくなり始めた兆候」は拾いにくい</dd>
+                                        </div>
+                                        <div>
+                                            <dt>無料AI</dt>
+                                            <dd>文章や一般論は作れても、「自店舗データの来店リズム」を前提にした判断は難しい</dd>
+                                        </div>
+                                    </dl>
+                                    <p class="comparison-summary">LOSSCANは、来店履歴という"自店舗の事実データ"に立脚して、<br>「今フォローすべき順番」を整えることに集中しています。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             VOICE（利用者の声）
+             ======================================== -->
+        <section class="section voice-section observe-fade">
+            <div class="voice-section__bg" aria-hidden="true"></div>
+            <div class="voice-section__overlay" aria-hidden="true"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Voice</h2>
+                </div>
+                <div class="voice-board">
+                    <div class="voice-grid">
+                    <div class="voice-card-wrap">
+                        <div class="voice-card__shadow" aria-hidden="true"></div>
+                        <div class="voice-card voice-card--1">
+                            <div class="voice-card__tape voice-card__tape--1" aria-hidden="true"></div>
+                            <div class="voice-card__header">
+                                <div class="voice-card__header-text">
+                                    <span class="voice-card__attr">美容室（1店舗）</span>
+                                </div>
+                                <div class="voice-card__photo" aria-hidden="true">
+                                    <img src="images/voice-beauty.png" width="200" height="200" alt="美容室の店内" loading="lazy">
+                                </div>
+                            </div>
+                            <p class="voice-card__quote">正直、来なくなってから気づくことが多かったです。LOSSCANを入れてからは、「今、声をかけるべき人」が明確になりました。</p>
+                        </div>
+                    </div>
+                    <div class="voice-card-wrap">
+                        <div class="voice-card__shadow" aria-hidden="true"></div>
+                        <div class="voice-card voice-card--2">
+                            <div class="voice-card__tape voice-card__tape--2" aria-hidden="true"></div>
+                            <div class="voice-card__header">
+                                <div class="voice-card__header-text">
+                                    <span class="voice-card__attr">整体院（3店舗）</span>
+                                </div>
+                                <div class="voice-card__photo" aria-hidden="true">
+                                    <img src="images/voice-seitai.png" width="200" height="200" alt="整体院の店内" loading="lazy">
+                                </div>
+                            </div>
+                            <p class="voice-card__quote">感覚ではなく、共通の基準で話せるようになったのが大きいです。スタッフへの指示もスムーズになりました。</p>
+                        </div>
+                    </div>
+                    <div class="voice-card-wrap">
+                        <div class="voice-card__shadow" aria-hidden="true"></div>
+                        <div class="voice-card voice-card--3">
+                            <div class="voice-card__tape voice-card__tape--3" aria-hidden="true"></div>
+                            <div class="voice-card__header">
+                                <div class="voice-card__header-text">
+                                    <span class="voice-card__attr">パーソナルジム</span>
+                                </div>
+                                <div class="voice-card__photo" aria-hidden="true">
+                                    <img src="images/voice-gym.png" width="200" height="200" alt="パーソナルジムの店内" loading="lazy">
+                                </div>
+                            </div>
+                            <p class="voice-card__quote">失ってから後悔することが減りました。静かに効いている感覚があります。</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SERVICE（サービス内容一覧）
+             ======================================== -->
+        <section id="service" class="section service-section section-dark observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Service</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                <path d="M3 3v5h5"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">01</span>
+                            <p class="service-item__text">顧客ごとの来店周期学習</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">02</span>
+                            <p class="service-item__text">来店遅延の自動検知</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">03</span>
+                            <p class="service-item__text">フォロー優先度表示<br><span class="service-item__sub">RED／YELLOW／GREEN</span></p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">04</span>
+                            <p class="service-item__text">スタッフ別／メニュー別の<br>継続傾向分析</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">05</span>
+                            <p class="service-item__text">CSVエクスポート</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"/>
+                                <polyline points="1 20 1 14 7 14"/>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">06</span>
+                            <p class="service-item__text">リスト更新<br><span class="service-item__sub">プランに応じた頻度</span></p>
+                        </div>
+                    </div>
+                    <div class="service-item service-item--wide">
+                        <div class="service-item__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="21" x2="4" y2="14"/>
+                                <line x1="4" y1="10" x2="4" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12" y2="3"/>
+                                <line x1="20" y1="21" x2="20" y2="16"/>
+                                <line x1="20" y1="12" x2="20" y2="3"/>
+                                <line x1="1" y1="14" x2="7" y2="14"/>
+                                <line x1="9" y1="8" x2="15" y2="8"/>
+                                <line x1="17" y1="16" x2="23" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="service-item__body">
+                            <span class="service-item__num">07</span>
+                            <p class="service-item__text">判定基準（RED/YELLOW）の初期設定・見直し<br><span class="service-item__sub">プランにより対応範囲が異なります</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             FLOW（ご利用の流れ）
+             ======================================== -->
+        <section class="section section-bg observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Flow</h2>
+                </div>
+                <div class="flow-visual">
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            </div>
+                            <div class="flow-visual-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">お申し込み</div>
+                        <div class="flow-visual-card">
+                            <p>WEBフォームより<br>お申し込み</p>
+                        </div>
+                    </div>
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+                            </div>
+                            <div class="flow-visual-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">初期設定</div>
+                        <div class="flow-visual-card">
+                            <p>予約／来店履歴の<br>データ連携・整備</p>
+                        </div>
+                    </div>
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+                            </div>
+                            <div class="flow-visual-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">自動分析</div>
+                        <div class="flow-visual-card">
+                            <p>AIによる来店周期・<br>継続傾向の学習</p>
+                        </div>
+                    </div>
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </div>
+                            <div class="flow-visual-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">リスト確認</div>
+                        <div class="flow-visual-card">
+                            <p>フォローが必要な<br>顧客を自動抽出</p>
+                        </div>
+                    </div>
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="flow-visual-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">アクション</div>
+                        <div class="flow-visual-card">
+                            <p>優先度の高い顧客へ<br>最適なフォローを実施</p>
+                        </div>
+                    </div>
+                    <div class="flow-visual-item">
+                        <div class="flow-visual-icon-wrap">
+                            <div class="flow-visual-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 11"></polyline></svg>
+                            </div>
+                        </div>
+                        <div class="flow-visual-title">定期チェック</div>
+                        <div class="flow-visual-card">
+                            <p>継続状況を分析し<br>施策をブラッシュアップ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PLAN（料金プラン）
+             ======================================== -->
+        <section id="plan" class="section observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Plan</h2>
+                </div>
+
+                <!-- Lite Plan - Featured -->
+                <div class="plan-lite">
+                    <div class="plan-lite-price">
+                        <p class="plan-lite-name">Lite Plan</p>
+                        <div class="plan-lite-amount">1,980<span>円/月</span></div>
+                        <p class="plan-lite-tax">(税込2,178円)</p>
+                    </div>
+                    <div class="plan-lite-info">
+                        <p class="plan-lite-tagline">まずは"継続の見える化"から始めたい方向け</p>
+                        <ul class="plan-lite-features">
+                            <li>顧客数：〜500名まで</li>
+                            <li>接続可能サービス：1システム</li>
+                            <li>来店周期の自動推定（簡易）</li>
+                            <li>来店遅延顧客の一覧表示（YELLOW／RED）</li>
+                            <li>フォロー対象CSVエクスポート</li>
+                        </ul>
+                    </div>
+                    <div class="plan-lite-cta">
+                        <a href="#contact" class="kv__btn">Contact</a>
+                        <p class="plan-lite-note">※継続状況の把握を目的としたエントリープラン</p>
+                    </div>
+                </div>
+
+                <!-- Other Plans -->
+                <div class="plan-grid">
+                    <div class="plan-card">
+                        <h3 class="plan-name">Solo Plan</h3>
+                        <div class="plan-price">3,980<span>円/月</span></div>
+                        <p class="plan-tax">(税込4,378円)</p>
+                        <p class="plan-desc">フォロー漏れを"仕組みで防ぎたい"店舗向け</p>
+                        <ul class="plan-features">
+                            <li>顧客数：〜1,000名まで</li>
+                            <li>接続可能サービス：1システム</li>
+                            <li>来店遅延アラート更新：週1回</li>
+                            <li>顧客ごとの来店周期の自動推定</li>
+                            <li>危険度別（GREEN／YELLOW／RED）のリスト表示</li>
+                            <li>CSVエクスポート機能</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card">
+                        <h3 class="plan-name">Studio Plan</h3>
+                        <div class="plan-price">6,980<span>円/月</span></div>
+                        <p class="plan-tax">(税込7,678円)</p>
+                        <p class="plan-desc">継続率を"分析で改善したい"事業者向け</p>
+                        <ul class="plan-features">
+                            <li>顧客数：〜5,000名まで</li>
+                            <li>接続可能サービス：2システムまで</li>
+                            <li>来店遅延アラート更新：週2回</li>
+                            <li>メニュー別／スタッフ別の継続傾向レポート</li>
+                            <li>定着率分析</li>
+                            <li>フォロー優先度の自動ソート</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card">
+                        <h3 class="plan-name">Multi-location</h3>
+                        <div class="plan-price">12,800<span>円/月</span></div>
+                        <p class="plan-tax">(税込14,080円)</p>
+                        <p class="plan-desc">多店舗経営を"数字で安定させたい"方向け</p>
+                        <ul class="plan-features">
+                            <li>顧客数：〜10,000名まで</li>
+                            <li>接続可能サービス：3システムまで</li>
+                            <li>店舗別ダッシュボード</li>
+                            <li>来店遅延リスクの高い店舗ランキング</li>
+                            <li>役員／マネージャー向け月次レポートPDF自動生成</li>
+                            <li>優先サポート</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="options-box">
+                    <h3>オプション</h3>
+                    <ul>
+                        <li><strong>初期設定費：</strong>9,800円（税込10,780円）〜19,800円（税込21,780円）<br><span>（API接続／データ整備）※料金幅は、連携システム数・データ整備量により変動します。</span></li>
+                        <li><strong>追加接続：</strong>1サービスごとに 1,000円（税込1,100円）〜3,000円（税込3,300円）／月</li>
+                        <li><strong>月次レポート拡張：</strong>2,000円（税込2,200円）／月<br><span>（改善ポイント＋主要KPIの簡易モニタリング）</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             FAQ
+             ======================================== -->
+        <section class="section section-bg observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">FAQ</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">新規集客にも使えますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">目的は新規獲得ではなく、既存顧客の継続率改善です。来店が遅れ始めた兆候を見つけ、フォローの優先度を整えます。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">どんなデータが必要ですか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">予約／来店履歴（日時・顧客IDなど）が必要です。取り込める項目は連携システムにより異なるため、初期設定で確認します。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">「RED/YELLOW」は何を基準に決まりますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">直近の来店履歴から、その顧客の通常ペースに対して"遅れ始めた度合い"を見て整理します。基準の考え方は初期設定で共有します。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">必ず失客を防げますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">失客や売上の保証は行いません。あくまで「気づける状態」を作り、行動の優先順位を整えるための仕組みです。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">途中解約はできますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">はい。次回更新前までに手続きいただければ停止できます。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">返金はできますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">サービスの性質上、決済後の返金は原則行っていません。不安がある場合はLiteからの導入をおすすめします。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">どの予約システムに対応していますか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">連携可否はシステム仕様により異なります。対応状況は事前確認のうえ、取り込めるデータ範囲に合わせて開始します。まずは「資料請求」または「画面イメージ」からご確認ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span class="faq-q-text">データの取り扱いは安全ですか？</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body" hidden>
+                            <p class="faq-a">取り扱い方針は「データ取り扱いについて（セキュリティ）」に記載しています。必要に応じて、導入前に運用上の注意点も共有します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             COMPANY（会社概要）
+             ======================================== -->
+        <section class="section observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Company</h2>
+                </div>
+                <div class="company-table-wrap">
+                    <table class="company-table">
+                    <tr>
+                        <th>会社名</th>
+                        <td>株式会社 Second style</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>井上 太陽</td>
+                    </tr>
+                    <tr>
+                        <th>運営責任者</th>
+                        <td>代表取締役 井上 太陽</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒150-0044 東京都渋谷区円山町5番3号 MIEUX 渋谷ビル8階</td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td>050-1725-4790<br><small>（※電話によるサポートは原則行っておりません）</small></td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td><a href="mailto:info@secondstyle-inc.net">info@secondstyle-inc.net</a></td>
+                    </tr>
+                    <tr>
+                        <th>問い合わせ対応</th>
+                        <td>原則メール対応</td>
+                    </tr>
+                    <tr>
+                        <th>対応時間</th>
+                        <td>平日 9:00〜17:00（土日祝休み）。営業時間外の問い合わせは翌営業日対応。緊急対応は行っておりません。</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>サロン／スクール向けデータ活用支援、顧客分析・継続率改善を目的としたSaaSの企画・提供、Web／マーケティング支援、コンテンツ企画・制作</td>
+                    </tr>
+                </table>
+                </div>
+                <div class="company-map-wrap">
+                    <iframe
+                        class="company-map"
+                        src="https://maps.google.com/maps?output=embed&amp;q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E5%86%86%E5%B1%B1%E7%94%BA5%E7%95%AA3%E5%8F%B7+MIEUX+%E6%B8%8B%E8%B0%B7%E3%83%93%E3%83%AB&amp;hl=ja&amp;z=17"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="株式会社 Second style 所在地"></iframe>
+                    <p class="company-map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E5%86%86%E5%B1%B1%E7%94%BA5%E7%95%AA3%E5%8F%B7+MIEUX+%E6%B8%8B%E8%B0%B7%E3%83%93%E3%83%AB" target="_blank" rel="noopener">Google マップで開く</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CONTACT（お問い合わせ）
+             ======================================== -->
+        <section id="contact" class="section section-bg observe-fade">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-subtitle">まずは、「来なくなりそうな顧客」を知るところから。</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">お名前 <span class="form-required">*</span></label>
+                        <input type="text" class="form-input" required placeholder="山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">メールアドレス <span class="form-required">*</span></label>
+                        <input type="email" class="form-input" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">お問い合わせ内容 <span class="form-required">*</span></label>
+                        <textarea class="form-textarea" required placeholder="ご質問・ご要望をご記入ください"></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="logo">LOSSCAN</span>
+                <p>既存顧客の継続率改善SaaS</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="terms.html">利用規約</a>
+                <a href="privacy.html">データ取り扱いについて</a>
+            </nav>
+        </div>
+        <div class="copyright">&copy; LOSSCAN All Rights Reserved.</div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <!-- Floating CTA（未ログイン時はログインのみ表示。WordPress化時にログイン済みならマイページに切り替え） -->
+    <div class="float-cta" id="floatCta">
+        <a href="#" class="float-cta__btn float-cta__btn--login" id="floatLogin" aria-label="ログイン">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 3h4a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-4"/>
+                <polyline points="9 16 14 10 9 4"/>
+                <line x1="14" y1="10" x2="3" y2="10"/>
+            </svg>
+            <span>ログイン</span>
+        </a>
+    </div>
+
+    <!-- レーザーポインターカーソル（KVセクション外で表示） -->
+    <div class="site-cursor" id="siteCursor" aria-hidden="true">
+        <div class="site-cursor__halo"></div>
+        <div class="site-cursor__dot"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
