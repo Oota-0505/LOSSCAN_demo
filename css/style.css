@@ -958,7 +958,7 @@ body.menu-open { overflow: hidden; }
   color: var(--c-main);
   line-height: 1.5;
   margin: 0;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
