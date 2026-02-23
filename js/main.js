@@ -119,6 +119,7 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', update);
+    window.addEventListener('load', update);
     update();
   })();
 
@@ -152,6 +153,46 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  })();
+
+  // ========================================
+  // Service section – 画像パララックス（スクロールで軽く動く）
+  // ========================================
+  (function () {
+    var section = document.querySelector('.service-section');
+    var imgWrap = section ? section.querySelector('.service-visual__img-wrap') : null;
+    if (!section || !imgWrap) return;
+    var ticking = false;
+    var parallaxRate = 0.35;
+    var maxOffsetPx = 60;
+
+    function update() {
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.innerWidth <= 768 || reducedMotion) {
+        imgWrap.style.transform = '';
+        ticking = false;
+        return;
+      }
+      var rect = section.getBoundingClientRect();
+      var scrollY = window.scrollY || window.pageYOffset;
+      var sectionTop = scrollY + rect.top;
+      var sectionH = section.offsetHeight;
+      var rawOffset = (scrollY - sectionTop) * (parallaxRate - 1);
+      var offset = Math.max(-maxOffsetPx, Math.min(maxOffsetPx, rawOffset));
+      imgWrap.style.transform = 'translate3d(0, ' + offset + 'px, 0)';
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
     update();
   })();
 
@@ -551,7 +592,7 @@
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           var cards = entry.target.querySelectorAll(
-            '.plan-card, .service-item, .problem-item'
+            '.voice-card-wrap, .plan-card'
           );
           cards.forEach(function (card, i) {
             setTimeout(function () {
@@ -571,10 +612,10 @@
       el.style.transition = 'opacity .5s ease, transform .5s ease';
     };
     document.querySelectorAll(
-      '.voice-grid, .service-grid, .problem-check-list'
+      '.voice-grid, .plan-grid'
     ).forEach(function (parent) {
       parent.querySelectorAll(
-        '.service-item, .problem-item'
+        '.voice-card-wrap, .plan-card'
       ).forEach(initCard);
       cardObserver.observe(parent);
     });

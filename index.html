@@ -290,106 +290,90 @@
         <!-- ========================================
              SERVICE（サービス内容一覧）
              ======================================== -->
-        <section id="service" class="section service-section section-dark observe-fade">
+        <section id="service" class="section service-section observe-fade">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Service</h2>
                 </div>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                                <path d="M3 3v5h5"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">01</span>
-                            <p class="service-item__text">顧客ごとの来店周期学習</p>
-                        </div>
+            </div>
+            <div class="service-layout">
+                <!-- 左カラム：画像＋キャッチ -->
+                <div class="service-visual">
+                    <div class="service-visual__overlay"></div>
+                    <div class="service-visual__img-wrap">
+                        <img class="service-visual__img" src="images/service-visual.png" alt="データ分析・ビジネスレポート" width="1200" height="800" loading="lazy">
                     </div>
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">02</span>
-                            <p class="service-item__text">来店遅延の自動検知</p>
-                        </div>
+                    <div class="service-visual__caption">
+                        <p class="service-visual__label">Our Capabilities</p>
+                        <h2 class="service-visual__title">
+                            来なくなりそうな顧客を、<br>
+                            <span class="service-visual__title-sub">来なくなる前に。</span>
+                        </h2>
                     </div>
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="20" x2="18" y2="10"/>
-                                <line x1="12" y1="20" x2="12" y2="4"/>
-                                <line x1="6" y1="20" x2="6" y2="14"/>
-                            </svg>
+                </div>
+                <!-- 右カラム：7つのサービス一覧（常時展開） -->
+                <div class="service-content">
+                    <div class="service-content__inner">
+                        <div class="service-content__intro">
+                            <span class="service-content__label">Service Overview</span>
+                            <h3 class="service-content__title">継続率改善に特化した<br>7つの機能</h3>
+                            <p class="service-content__lead">
+                                来店周期・継続傾向をAIで学習し、「来なくなりそうな顧客」だけを自動で抽出・可視化。フォロー漏れを防ぐための機能を提供します。
+                            </p>
                         </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">03</span>
-                            <p class="service-item__text">フォロー優先度表示<br><span class="service-item__sub">RED／YELLOW／GREEN</span></p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">04</span>
-                            <p class="service-item__text">スタッフ別／メニュー別の<br>継続傾向分析</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7 10 12 15 17 10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">05</span>
-                            <p class="service-item__text">CSVエクスポート</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 4 23 10 17 10"/>
-                                <polyline points="1 20 1 14 7 14"/>
-                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">06</span>
-                            <p class="service-item__text">リスト更新<br><span class="service-item__sub">プランに応じた頻度</span></p>
-                        </div>
-                    </div>
-                    <div class="service-item service-item--wide">
-                        <div class="service-item__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="4" y1="21" x2="4" y2="14"/>
-                                <line x1="4" y1="10" x2="4" y2="3"/>
-                                <line x1="12" y1="21" x2="12" y2="12"/>
-                                <line x1="12" y1="8" x2="12" y2="3"/>
-                                <line x1="20" y1="21" x2="20" y2="16"/>
-                                <line x1="20" y1="12" x2="20" y2="3"/>
-                                <line x1="1" y1="14" x2="7" y2="14"/>
-                                <line x1="9" y1="8" x2="15" y2="8"/>
-                                <line x1="17" y1="16" x2="23" y2="16"/>
-                            </svg>
-                        </div>
-                        <div class="service-item__body">
-                            <span class="service-item__num">07</span>
-                            <p class="service-item__text">判定基準（RED/YELLOW）の初期設定・見直し<br><span class="service-item__sub">プランにより対応範囲が異なります</span></p>
+                        <div class="service-list">
+                            <article class="service-list__item">
+                                <span class="service-list__num">01</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">顧客ごとの来店周期学習</h4>
+                                    <p class="service-list__desc">来店履歴データから顧客ごとの来店周期を自動推定。個人差を考慮した分析で、遅れの兆候を正確に捉えます。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">02</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">来店遅延の自動検知</h4>
+                                    <p class="service-list__desc">通常より来店が遅れている顧客を自動で検知。アラート更新頻度はプランに応じて週1回〜週2回。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">03</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">フォロー優先度表示</h4>
+                                    <p class="service-list__sub">RED／YELLOW／GREEN</p>
+                                    <p class="service-list__desc">危険度別にリスト表示。誰に声をかけるべきか迷わない状態を作ります。上位プランでは重要度順の自動ソートに対応。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">04</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">スタッフ別／メニュー別の継続傾向分析</h4>
+                                    <p class="service-list__desc">メニュー別・スタッフ別の継続傾向レポートで、改善ポイントを構造的に把握。新規→2回目、2回目→3回目の定着率分析も可能。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">05</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">CSVエクスポート</h4>
+                                    <p class="service-list__desc">フォロー対象リストをCSVで出力。既存のCRMや名簿管理ツールとの連携がしやすくなります。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">06</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">リスト更新</h4>
+                                    <p class="service-list__sub">プランに応じた頻度</p>
+                                    <p class="service-list__desc">来店遅延アラートの更新頻度はプランにより異なります。Liteは一覧表示、Solo以上は週1回〜週2回の自動更新。</p>
+                                </div>
+                            </article>
+                            <article class="service-list__item">
+                                <span class="service-list__num">07</span>
+                                <div class="service-list__body">
+                                    <h4 class="service-list__title">判定基準（RED/YELLOW）の初期設定・見直し</h4>
+                                    <p class="service-list__sub">プランにより対応範囲が異なります</p>
+                                    <p class="service-list__desc">業種・来店頻度に合わせた判定基準の初期設定と、運用状況に応じた見直しをサポート。プランにより対応範囲が異なります。</p>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -736,7 +720,6 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Contact</h2>
-                    <p class="section-subtitle">まずは、「来なくなりそうな顧客」を知るところから。</p>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
